@@ -25,6 +25,8 @@ export default function Calculator() {
     const numbersTwo = value.join('').split('-').map(n => +n)
     const singMult = value.filter(x => x === 'X')
     const numbersThree = value.join('').split('X').map(n => +n)
+    const singDiv = value.filter(x => x === '/')
+    const numbersFour = value.join('').split('/').map(n => +n)
     // console.log(numbersThree)
     if (signPlus.length > 0) {
       const answer = obj.add(...numbers)
@@ -36,6 +38,9 @@ export default function Calculator() {
     } else if (singMult.length > 0) {
 
       const answer = obj.multiply(...numbersThree)
+      setValue([answer])
+    } else if (singDiv.length > 0) {
+      const answer = obj.divide(...numbersFour)
       setValue([answer])
     }
   }
