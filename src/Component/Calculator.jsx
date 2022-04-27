@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AC from "./UI/AC";
 import Button from "./UI/Button";
 import Egal from "./UI/Egal";
-
+import obj from '../Solve.js'
 
 export default function Calculator() {
 
@@ -17,9 +17,18 @@ export default function Calculator() {
 
   }
 
+  const handleOperation = () => {
 
-  const deleteAll=()=>{
-      setValue([])
+    const signPlus = value.filter(x => x === '+')
+    const values = value.filter(n => typeof n)
+    if (signPlus.length > 0) {
+      obj.add(values)
+    }
+
+  }
+
+  const deleteAll = () => {
+    setValue([])
   }
   return (
     <div className="calculator">
@@ -27,8 +36,8 @@ export default function Calculator() {
 
       <div className="all-button">
         <AC deleteAll={deleteAll} />
-        <Button handleClick ={handleClick}Text={"/"} />
-        <Button  handleClick ={handleClick} Text={"X"} />
+        <Button handleClick={handleClick} Text={"/"} />
+        <Button handleClick={handleClick} Text={"X"} />
       </div>
 
       <div className="second-row">
