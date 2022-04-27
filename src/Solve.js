@@ -14,6 +14,11 @@ const obj = {
         return theArgs.reduce((a, b) => a / b)
 
     }
+    ,
+
+    minus(...theArgs) {
+        return theArgs.reduce((a, b) => a - b)
+    }
 }
 
 

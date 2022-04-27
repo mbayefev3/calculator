@@ -21,16 +21,25 @@ export default function Calculator() {
 
     const signPlus = value.filter(x => x === '+')
     const numbers = value.join('').split('+').map(n => +n)
-
+    const singMinus = value.filter(x => x === '-')
+    const numbersTwo = value.join('').split('-').map(n => +n)
+    const singMult = value.filter(x => x === 'X')
+    const numbersThree = value.join('').split('X').map(n => +n)
+    // console.log(numbersThree)
     if (signPlus.length > 0) {
       const answer = obj.add(...numbers)
 
       setValue([answer])
+    } else if (singMinus.length > 0) {
+      const answer = obj.minus(...numbersTwo)
+      setValue([answer])
+    } else if (singMult.length > 0) {
+
+      const answer = obj.multiply(...numbersThree)
+      setValue([answer])
     }
-    // console.log(value)
   }
 
-  //handleOperation()
 
   const deleteAll = () => {
     setValue([])
