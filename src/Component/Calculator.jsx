@@ -8,7 +8,7 @@ export default function Calculator() {
 
   const [value, setValue] = useState([])
 
-  const all = ['7', '8', '9', '-', '4', '5', "6", "+", "1", "2", "3", "0", ".", "="]
+  const all = ['7', '8', '9', '-', '4', '5', "6", "+", "1", "2", "3", "0", "."]
 
 
   const handleClick = (myinput) => {
@@ -25,12 +25,12 @@ export default function Calculator() {
     if (signPlus.length > 0) {
       const answer = obj.add(...numbers)
 
-      setValue(answer)
+      setValue([answer])
     }
     // console.log(value)
   }
 
-  handleOperation()
+  //handleOperation()
 
   const deleteAll = () => {
     setValue([])
@@ -57,6 +57,8 @@ export default function Calculator() {
             </div>
           )
         })}
+
+<button  onClick={handleOperation} className='offi-button'>=</button>
 
       </div>
     </div>
