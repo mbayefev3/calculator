@@ -6,19 +6,19 @@ import Egal from "./UI/Egal";
 
 export default function Calculator() {
 
-    const [value,setValue]=useState([])
+  const [value, setValue] = useState([])
 
-    const all = ['7','8','8','-','4','5',"6","+","1","2","3","0",".","="]
+  const all = ['7', '8', '9', '-', '4', '5', "6", "+", "1", "2", "3", "0", ".", "="]
 
 
-    const handleClick=(myinput)=>{
+  const handleClick = (myinput) => {
 
-        setValue([...value,myinput])
+    setValue([...value, myinput])
 
-    }
+  }
   return (
     <div className="calculator">
-      <input value={value.toString()} className="tableau" type="text" name="" id="" />
+      <input value={value.join('')} className="tableau" type="text" name="" id="" />
 
       <div className="all-button">
         <AC />
@@ -28,15 +28,15 @@ export default function Calculator() {
 
       <div className="second-row">
 
-          {all.map(all =>{
-              return (
-                  <div>
-                <Button handleClick={handleClick}  Text={all} />
+        {all.map(all => {
+          return (
+            <div>
+              <Button handleClick={handleClick} Text={all} />
 
-                  </div>
-              )
-          })}
-       
+            </div>
+          )
+        })}
+
       </div>
     </div>
   );
