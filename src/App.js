@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import data from './Data'
+import Travel from './Travel'
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Traveling Angency</h1>
+
+      {
+        data.map(dat => {
+
+          return (
+            <Travel location={dat.location}
+              description={dat.description}
+              imageUrl={dat.imageUrl}
+              googleMapsUrl={dat.googleMapsUrl}
+
+              title={dat.title}
+            />
+          )
+        })
+      }
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+export default App
