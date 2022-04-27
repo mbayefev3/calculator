@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function AC() {
+export default function AC({deleteAll}) {
   return (
     <div>
 
-        <button className='AC-button'>AC</button>
+        <button onClick={deleteAll} className='AC-button'>AC</button>
     </div>
   )
 }

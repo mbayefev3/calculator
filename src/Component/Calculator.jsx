@@ -16,14 +16,19 @@ export default function Calculator() {
     setValue([...value, myinput])
 
   }
+
+
+  const deleteAll=()=>{
+      setValue([])
+  }
   return (
     <div className="calculator">
       <input value={value.join('')} className="tableau" type="text" name="" id="" />
 
       <div className="all-button">
-        <AC />
-        <Button Text={"/"} />
-        <Button Text={"X"} />
+        <AC deleteAll={deleteAll} />
+        <Button handleClick ={handleClick}Text={"/"} />
+        <Button  handleClick ={handleClick} Text={"X"} />
       </div>
 
       <div className="second-row">
