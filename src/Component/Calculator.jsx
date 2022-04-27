@@ -20,17 +20,24 @@ export default function Calculator() {
   const handleOperation = () => {
 
     const signPlus = value.filter(x => x === '+')
-    const values = value.filter(n => typeof n)
-    if (signPlus.length > 0) {
-      obj.add(values)
-    }
+    const numbers = value.filter(n => n !== '+').map(n => +n)
 
+    if (signPlus.length > 0) {
+      const answer = obj.add(...numbers)
+
+      setValue(answer)
+    }
+    // console.log(value)
   }
+
+  handleOperation()
 
   const deleteAll = () => {
     setValue([])
   }
   return (
+
+
     <div className="calculator">
       <input value={value.join('')} className="tableau" type="text" name="" id="" />
 
