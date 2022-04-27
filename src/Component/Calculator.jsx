@@ -20,7 +20,7 @@ export default function Calculator() {
   const handleOperation = () => {
 
     const signPlus = value.filter(x => x === '+')
-    const numbers = value.filter(n => n !== '+').map(n => +n)
+    const numbers = value.join('').split('+').map(n => +n)
 
     if (signPlus.length > 0) {
       const answer = obj.add(...numbers)
@@ -58,7 +58,7 @@ export default function Calculator() {
           )
         })}
 
-<button  onClick={handleOperation} className='offi-button'>=</button>
+        <button onClick={handleOperation} className='offi-button'>=</button>
 
       </div>
     </div>
